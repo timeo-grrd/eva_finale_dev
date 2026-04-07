@@ -9,12 +9,15 @@ def add_cors_headers(response):
     response.headers["Access-Control-Allow-Headers"] = "Content-Type"
     return response
 
-livres = [
-    {"id" : 1, "titre" : "Les Fourmis", "auteur" : "Bernard Werber", "categorie": "Science-Fiction"},
-    {"id" : 2, "titre" : "Vingt mille lieues sous les mers", "auteur" : "Jules Verne", "categorie": "Aventure"},
-    {"id" : 3, "titre" : "L'Étranger", "auteur" : "Albert Camus", "categorie": "Roman"},
-    {"id" : 4, "titre" : "Parisian Gentleman", "auteur" : "Hugo Jacomet", "categorie": "Essai"},
-    {"id" : 5, "titre" : "Critique de la raison pure", "auteur" : "Emmanuel Kant", "categorie": "Philosophie"}
+sorties = [
+    {"id": 1, "titre": "Soirée cinéma entre amis", "categorie": "cinéma", "budget": 10, "description": "Regarder un film récent ou culte avec des amis dans une ambiance conviviale.", "note": 4},
+    {"id": 2, "titre": "Balade au parc", "categorie": "nature", "budget": 0, "description": "Profiter d'une promenade relaxante dans un parc ou jardin public.", "note": 5},
+    {"id": 3, "titre": "Match de foot amateur", "categorie": "sport", "budget": 5, "description": "Jouer ou regarder un match de football entre étudiants.", "note": 4},
+    {"id": 4, "titre": "Dîner street food", "categorie": "food", "budget": 15, "description": "Découvrir différents stands de street food pour un repas varié.", "note": 5},
+    {"id": 5, "titre": "Visite de musée gratuit", "categorie": "culture", "budget": 0, "description": "Explorer un musée lors d'une journée gratuite ou à tarif réduit.", "note": 4},
+    {"id": 6, "titre": "Soirée jeux de société", "categorie": "jeu", "budget": 5, "description": "Partager un moment ludique autour de jeux de société classiques ou modernes.", "note": 5},
+    {"id": 7, "titre": "Randonnée en groupe", "categorie": "nature", "budget": 5, "description": "Partir en randonnée avec des amis pour découvrir de nouveaux paysages.", "note": 5},
+    {"id": 8, "titre": "Concert local", "categorie": "culture", "budget": 20, "description": "Assister à un concert d'artistes locaux dans une petite salle.", "note": 4}
 ]
 
 # GET api/books recupère les données de la liste de livre et le return sous forme de json pour garder le même format
