@@ -17,7 +17,25 @@ sorties = [
     {"id": 5, "titre": "Visite de musée gratuit", "categorie": "culture", "budget": 0, "description": "Explorer un musée lors d'une journée gratuite ou à tarif réduit.", "note": 4},
     {"id": 6, "titre": "Soirée jeux de société", "categorie": "jeu", "budget": 5, "description": "Partager un moment ludique autour de jeux de société classiques ou modernes.", "note": 5},
     {"id": 7, "titre": "Randonnée en groupe", "categorie": "nature", "budget": 5, "description": "Partir en randonnée avec des amis pour découvrir de nouveaux paysages.", "note": 5},
-    {"id": 8, "titre": "Concert local", "categorie": "culture", "budget": 20, "description": "Assister à un concert d'artistes locaux dans une petite salle.", "note": 4}
+    {"id": 8, "titre": "Concert local", "categorie": "culture", "budget": 20, "description": "Assister à un concert d'artistes locaux dans une petite salle.", "note": 4},
+
+    {"id": 9, "titre": "Bowling entre amis", "categorie": "jeu", "budget": 15, "description": "Passer une soirée fun à enchaîner les strikes au bowling.", "note": 4},
+    {"id": 10, "titre": "Pique-nique étudiant", "categorie": "nature", "budget": 5, "description": "Partager un repas simple en plein air avec des amis.", "note": 5},
+    {"id": 11, "titre": "Escape game", "categorie": "jeu", "budget": 25, "description": "Résoudre des énigmes en équipe dans un temps limité.", "note": 5},
+    {"id": 12, "titre": "Soirée karaoké", "categorie": "divertissement", "budget": 10, "description": "Chanter ses chansons préférées dans une ambiance festive.", "note": 4},
+    {"id": 13, "titre": "Marché local", "categorie": "culture", "budget": 10, "description": "Découvrir les produits locaux et l'ambiance d'un marché.", "note": 4},
+    {"id": 14, "titre": "Session running", "categorie": "sport", "budget": 0, "description": "Faire un footing en groupe pour se motiver ensemble.", "note": 4},
+    {"id": 15, "titre": "Plage ou lac", "categorie": "nature", "budget": 5, "description": "Profiter d'un moment de détente au bord de l'eau.", "note": 5},
+    {"id": 16, "titre": "Bar à thème", "categorie": "food", "budget": 20, "description": "Découvrir un bar original avec une ambiance unique.", "note": 4},
+    {"id": 17, "titre": "Atelier cuisine", "categorie": "food", "budget": 15, "description": "Apprendre à cuisiner une recette entre amis.", "note": 5},
+    {"id": 18, "titre": "Tournoi gaming", "categorie": "jeu", "budget": 5, "description": "Organiser un tournoi de jeux vidéo entre étudiants.", "note": 5},
+    {"id": 19, "titre": "Exposition photo", "categorie": "culture", "budget": 10, "description": "Explorer une exposition artistique inspirante.", "note": 4},
+    {"id": 20, "titre": "Vélo en ville", "categorie": "sport", "budget": 5, "description": "Se balader à vélo pour découvrir la ville autrement.", "note": 4},
+    {"id": 21, "titre": "Soirée chill musique", "categorie": "divertissement", "budget": 0, "description": "Écouter de la musique et discuter dans une ambiance détendue.", "note": 5},
+    {"id": 22, "titre": "Festival étudiant", "categorie": "culture", "budget": 20, "description": "Participer à un festival avec concerts et animations.", "note": 5},
+    {"id": 23, "titre": "Cours de yoga", "categorie": "sport", "budget": 10, "description": "Se détendre avec une séance de yoga accessible à tous.", "note": 4},
+    {"id": 24, "titre": "Cinéma plein air", "categorie": "cinéma", "budget": 5, "description": "Regarder un film en extérieur pendant une soirée d'été.", "note": 5},
+    {"id": 25, "titre": "Brunch entre amis", "categorie": "food", "budget": 15, "description": "Partager un brunch gourmand en fin de matinée.", "note": 5}
 ]
 
 # GET api/books recupère les données de la liste de livre et le return sous forme de json pour garder le même format
