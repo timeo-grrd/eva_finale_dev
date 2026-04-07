@@ -26,7 +26,16 @@ function afficherListe(sorties) {
 
     sorties.forEach(sortie => {
         const li = document.createElement("li");
-        li.innerHTML = `<strong>Nom :</strong> ${sortie.titre} <br> <strong>Catégorie :</strong> ${sortie.categorie} <br> <strong>Budget :</strong> ${sortie.budget} € <br> <strong>Description :</strong> ${sortie.description} <br> <strong>Note :</strong> ${sortie.note}/5 <br>`;
+        li.innerHTML = `<strong>Nom :</strong> ${sortie.titre} 
+        <br> 
+        <strong>Catégorie :</strong> ${sortie.categorie} 
+        <br> 
+        <strong>Budget :</strong> ${sortie.budget} € 
+        <br> 
+        <strong>Description :</strong> ${sortie.description} 
+        <br> 
+        <strong>Note :</strong> ${sortie.note}/5 
+        <br>`;
 
         const btnDelete = document.createElement("button");
         btnDelete.textContent = "Supprimer";
@@ -91,7 +100,7 @@ function applyFilters() {
 
         return true;
     });
-// filtre par ordre croissant
+    // filtre par ordre croissant
     filtres.sort((a, b) => {
         const budgetA = parseFloat(a.budget) || 0;
         const budgetB = parseFloat(b.budget) || 0;

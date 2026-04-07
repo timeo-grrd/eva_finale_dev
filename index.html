@@ -1,122 +1,100 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestion des sorties</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <!-- Titre -->
-    <h1>Gestion des sorties</h1>
-    <h2>Ajouter des sorties</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestion des sorties</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- Formulaire d'ajout -->
-    <!-- "id": 1, "titre": "Soirée cinéma entre amis", "categorie": "cinéma", "budget": 10, "description": "Regarder un film récent ou culte avec des amis dans une ambiance conviviale.", "note": 4 -->
-    <form>
-      <div>
-        <label for="titre">Titre :</label>
-        <input
-          type="text"
-          id="titre"
-          name="titre"
-          placeholder="Soirée cinéma entre amis"
-        />
-      </div>
-      <br />
-      <div>
-        <label for="budget">Budget : </label>
-        <input
-          type="number"
-          min="0"
-          id="budget"
-          name="budget"
-          placeholder="10"
-        />
-      </div>
-      <br />
-      <div>
-        <label for="categorie">Catégorie :</label>
-        <select id="categorie" name="categorie">
-          <option value="Cinéma">Cinéma</option>
-          <option value="Nature">Nature</option>
-          <option value="Sport">Sport</option>
-          <option value="Food">Food</option>
-          <option value="Culture">Culture</option>
-          <option value="Jeu">Jeu</option>
-        </select>
-      </div>
-      <div>
-        <label for="description">Description : </label>
-        <input
-          type="text"
-          id="description"
-          name="description"
-          placeholder="Description de l'activité"
-        />
-      </div>
-      <div>
-        <label for="note">Note : </label>
-        <input
-          type="number"
-          id="note"
-          name="note"
-          placeholder="Une note entre 0 et 5"
-          min="0"
-          max="5"
-        />
-      </div>
-      <br />
-      <button type="submit">Ajouter</button>
-    </form>
+<body>
+  <!-- Titre -->
+  <h1>Gestion des sorties</h1>
+  <h2>Ajouter des sorties</h2>
 
+  <!-- Formulaire d'ajout -->
+  <!-- "id": 1, "titre": "Soirée cinéma entre amis", "categorie": "cinéma", "budget": 10, "description": "Regarder un film récent ou culte avec des amis dans une ambiance conviviale.", "note": 4 -->
+  <form>
+    <div>
+      <label for="titre">Titre :</label>
+      <input type="text" id="titre" name="titre" placeholder="Soirée cinéma entre amis" />
+    </div>
     <br />
-    <hr />
-
-    <!-- Zone de liste -->
-    <h2>Rechercher des sorties</h2>
-
-    <div class="search-bar">
-      <label for="search">Rechercher :</label>
-      <input type="text" id="search" placeholder="Rechercher..." />
+    <div>
+      <label for="budget">Budget : </label>
+      <input type="number" min="0" id="budget" name="budget" placeholder="10" />
     </div>
-    <div class="filtres-row">
-      <div id="filtre_categorie">
-        <select name="filtre_categorie" id="categorie_filtre">
-          <option value="categorie">Toutes les catégories</option>
-          <option value="Cinéma">Cinéma</option>
-          <option value="Nature">Nature</option>
-          <option value="Sport">Sport</option>
-          <option value="Food">Food</option>
-          <option value="Culture">Culture</option>
-          <option value="Jeu">Jeu</option>
-        </select>
-      </div>
-      <div id="filtre_prix">
-        <select name="filtre_prix" id="prix_filtre">
-          <option value="prix">Tous les prix</option>
-          <option value="0-10">0-10 €</option>
-          <option value="10-20">10-20 €</option>
-          <option value="20+">20+ €</option>
-        </select>
-      </div>
-      <div id="filtre_note">
-        <select name="filtre_note" id="note_filtre">
-          <option value="note">Toutes les notes</option>
-          <option value="0-2">0-2</option>
-          <option value="2-4">2-4</option>
-          <option value="4-5">4-5</option>
-        </select>
-      </div>
+    <br />
+    <div>
+      <label for="categorie">Catégorie :</label>
+      <select id="categorie" name="categorie">
+        <option value="Cinéma">Cinéma</option>
+        <option value="Nature">Nature</option>
+        <option value="Sport">Sport</option>
+        <option value="Food">Food</option>
+        <option value="Culture">Culture</option>
+        <option value="Jeu">Jeu</option>
+      </select>
     </div>
-
-    <div class="actions-row">
-      <button id="btn-sort-prix" type="button">Tri prix: croissant</button>
-      <button id="btn-refresh" type="button">Charger la liste</button>
+    <div>
+      <label for="description">Description : </label>
+      <input type="text" id="description" name="description" placeholder="Description de l'activité" />
     </div>
-    <ul id="liste"></ul>
+    <div>
+      <label for="note">Note : </label>
+      <input type="number" id="note" name="note" placeholder="Une note entre 0 et 5" min="0" max="5" />
+    </div>
+    <br />
+    <button type="submit">Ajouter</button>
+  </form>
 
-    <script src="script.js"></script>
-  </body>
+  <br />
+  <hr />
+
+  <!-- Zone de liste -->
+  <h2>Rechercher des sorties</h2>
+
+  <div class="search-bar">
+    <label for="search">Rechercher :</label>
+    <input type="text" id="search" placeholder="Rechercher..." />
+  </div>
+  <div class="filtres-row">
+    <div id="filtre_categorie">
+      <select name="filtre_categorie" id="categorie_filtre">
+        <option value="categorie">Toutes les catégories</option>
+        <option value="Cinéma">Cinéma</option>
+        <option value="Nature">Nature</option>
+        <option value="Sport">Sport</option>
+        <option value="Food">Food</option>
+        <option value="Culture">Culture</option>
+        <option value="Jeu">Jeu</option>
+      </select>
+    </div>
+    <div id="filtre_prix">
+      <select name="filtre_prix" id="prix_filtre">
+        <option value="prix">Tous les prix</option>
+        <option value="0-10">0-10 €</option>
+        <option value="10-20">10-20 €</option>
+        <option value="20+">20+ €</option>
+      </select>
+    </div>
+    <div id="filtre_note">
+      <select name="filtre_note" id="note_filtre">
+        <option value="note">Toutes les notes</option>
+        <option value="0-2">0-2</option>
+        <option value="2-4">2-4</option>
+        <option value="4-5">4-5</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="actions-row">
+    <button id="btn-sort-prix" type="button">Tri prix: croissant</button>
+    <button id="btn-refresh" type="button">Charger la liste</button>
+  </div>
+  <ul id="liste"></ul>
+  <script src="script.js"></script>
+</body>
+
 </html>
