@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Titre -->
+    <h1>Bibliothèque</h1>
+
+    <!-- Formulaire d'ajout -->
+    <form>
+        <div>
+            <label for="titre">Titre :</label>
+            <input type="text" id="titre" name="titre" placeholder="Titre du livre">
+        </div>
+        <br>
+        <div>
+            <label for="auteur">Auteur :</label>
+            <input type="text" id="auteur" name="auteur" placeholder="Prénom et Nom de l'auteur">
+        </div>
+        <br>
+        <div>
+            <label for="categorie">Catégorie :</label>
+            <select id="categorie" name="categorie">
+                <option value="Roman">Roman</option>
+                <option value="Science-Fiction">Science-Fiction</option>
+                <option value="Aventure">Aventure</option>
+                <option value="Philosophie">Philosophie</option>
+                <option value="Essai">Essai</option>
+            </select>
+        </div>
+        <br>
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <br>
+    <hr>
+
+    <!-- Zone de liste -->
+    <h2>Zone de liste</h2>
+    
+    <div class="search-bar">
+        <label for="search">Rechercher :</label>
+        <input type="text" id="search" placeholder="Titre, Auteur ou Catégorie...">
+    </div>
+    
+    <button id="btn-refresh">Charger la liste</button>
+    <ul id="liste">
+    </ul>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

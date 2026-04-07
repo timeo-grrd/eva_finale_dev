@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: #f9f9f9;
+}
+
+h1,
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto; /* Centrer le formulaire */
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"],
+#btn-refresh {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+#btn-refresh:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Recherche */
+.search-bar {
+    margin: 0 auto 15px auto; /* Centrer la barre */
+    max-width: 400px;
+}
+
+#btn-refresh {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Zone de la liste en grille de cartes */
+ul#liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style de chaque carte (<li>) */
+ul#liste li {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Bouton supprimer dans la carte */
+ul#liste li button {
+    margin-top: 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+ul#liste li button:hover {
+    background-color: #c82333;
+}

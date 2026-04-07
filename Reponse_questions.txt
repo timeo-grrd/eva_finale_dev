@@ -1,0 +1,18 @@
+On utilise JSON pour avoir un format standardisé entre le frontend et la backend
+
+Je HTML ne fait que afficher les données et pouvoir utiliser les inputs alors que le JS permet de faire 
+la liaison avec le backend
+
+Quand on ajoute un livre, du coté client, on recupère les données du formulaire et on les envoient en JSON au backend
+et du coté serveur, on recupère le JSON et on l'ajoute à la liste de livre
+
+
+La suppression utilise une route avec un id pour pouvoir identifier de manière unique le livre à supprimer
+
+Le filtrage doit etre fait coté client car ce n'est que de l'affichage et pas de modification du coté de la BDD
+
+Dans l'application le code 404 signifie que le livre n'a pas été trouvé, par defaut 404 signifie qu'une page
+n'a pas été trouvé 
+
+Le bouton supprimer ne doit pas recharger toute la page car c'est moins rapide et moins fluide pour un utilisateur
+
