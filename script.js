@@ -51,6 +51,7 @@ searchInput.addEventListener("input", () => {
         (sortie.note && sortie.note.toLowerCase().includes(recherche))
     );
 
+
     afficherListe(filtres);
 });
 
