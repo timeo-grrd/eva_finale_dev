@@ -72,6 +72,7 @@ button {
 }
 
 button[type="submit"],
+#btn-sort-prix,
 #btn-refresh {
     background-color: #475569;
     color: white;
@@ -79,15 +80,23 @@ button[type="submit"],
 }
 
 button[type="submit"]:hover,
+#btn-sort-prix:hover,
 #btn-refresh:hover {
     background-color: #334155;
     transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-#btn-refresh {
-    display: block;
+.actions-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
     margin: 0 auto 30px auto;
+    flex-wrap: wrap;
+}
+
+#btn-refresh {
+    margin: 0;
 }
 
 hr {

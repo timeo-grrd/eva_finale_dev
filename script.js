@@ -3,7 +3,14 @@ let searchInput = document.getElementById("search");
 let categorieFiltre = document.getElementById("categorie_filtre");
 let prixFiltre = document.getElementById("prix_filtre");
 let noteFiltre = document.getElementById("note_filtre");
+let boutonTriPrix = document.getElementById("btn-sort-prix");
 let sortiesCache = [];
+let triPrixCroissant = true;
+
+function updateSortButtonLabel() {
+    if (!boutonTriPrix) return;
+    boutonTriPrix.textContent = triPrixCroissant ? "Tri prix: croissant" : "Tri prix: décroissant";
+}
 
 function afficherListe(sorties) {
     const liste = document.getElementById("liste");
@@ -85,6 +92,12 @@ function applyFilters() {
         return true;
     });
 
+    filtres.sort((a, b) => {
+        const budgetA = parseFloat(a.budget) || 0;
+        const budgetB = parseFloat(b.budget) || 0;
+        return triPrixCroissant ? budgetA - budgetB : budgetB - budgetA;
+    });
+
     afficherListe(filtres);
 }
 
@@ -102,6 +115,15 @@ searchInput.addEventListener("input", applyFilters);
 if (categorieFiltre) categorieFiltre.addEventListener("change", applyFilters);
 if (prixFiltre) prixFiltre.addEventListener("change", applyFilters);
 if (noteFiltre) noteFiltre.addEventListener("change", applyFilters);
+if (boutonTriPrix) {
+    boutonTriPrix.addEventListener("click", () => {
+        triPrixCroissant = !triPrixCroissant;
+        updateSortButtonLabel();
+        applyFilters();
+    });
+}
+
+updateSortButtonLabel();
 
 // Gérer la soumission du formulaire d'ajout
 const form = document.querySelector("form");
