@@ -163,6 +163,16 @@ ul#liste li strong {
     color: #475569;
 }
 
+ul#liste li.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-weight: 600;
+    color: #64748b;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+}
+
 /* Bouton supprimer dans la carte */
 ul#liste li button {
     margin-top: 20px;

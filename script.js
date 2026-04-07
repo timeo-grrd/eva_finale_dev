@@ -9,6 +9,14 @@ function afficherListe(sorties) {
     const liste = document.getElementById("liste");
     liste.innerHTML = "";
 
+    if (!sorties || sorties.length === 0) {
+        const li = document.createElement("li");
+        li.textContent = "Aucune activité disponible";
+        li.className = "empty-state";
+        liste.appendChild(li);
+        return;
+    }
+
     sorties.forEach(sortie => {
         const li = document.createElement("li");
         li.innerHTML = `<strong>Nom :</strong> ${sortie.titre} <br> <strong>Catégorie :</strong> ${sortie.categorie} <br> <strong>Budget :</strong> ${sortie.budget} € <br> <strong>Description :</strong> ${sortie.description} <br> <strong>Note :</strong> ${sortie.note}/5 <br>`;
@@ -118,5 +126,6 @@ form.addEventListener("submit", (e) => {
         .catch(error => {
             console.error("Erreur réseau :", error);
         });
+
 });
 
