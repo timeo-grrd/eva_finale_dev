@@ -1,21 +1,21 @@
 let boutonActualiser = document.getElementById("btn-refresh");
 let searchInput = document.getElementById("search");
-let livresCache = [];
+let sortiesCache = [];
 
-function afficherListe(livres) {
+function afficherListe(sorties) {
     const liste = document.getElementById("liste");
     liste.innerHTML = "";
 
-    livres.forEach(livre => {
+    sorties.forEach(sortie => {
         const li = document.createElement("li");
-        li.textContent = livre.titre + " - " + livre.auteur + " / " + livre.categorie;
+        li.innerHTML = `<strong>Nom :</strong> ${sortie.titre} <br> <strong>Catégorie :</strong> ${sortie.categorie} <br> <strong>Budget :</strong> ${sortie.budget} <br> <strong>Description :</strong> ${sortie.description} <br> <strong>Note :</strong> ${sortie.note} <br>`;
 
         const btnDelete = document.createElement("button");
         btnDelete.textContent = "Supprimer";
 
         btnDelete.addEventListener("click", () => {
-            if (confirm(`Voulez-vous vraiment supprimer ${livre.titre} ?`)) {
-                fetch(`http://localhost:5000/api/books/${livre.id}`, {
+            if (confirm(`Voulez-vous vraiment supprimer ${sortie.titre} ?`)) {
+                fetch(`http://localhost:5000/api/sorties/${sortie.id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -32,21 +32,23 @@ function afficherListe(livres) {
 }
 
 boutonActualiser.addEventListener("click", () => {
-    fetch("http://localhost:5000/api/books")
+    fetch("http://localhost:5000/api/sorties")
         .then(response => response.json())
         .then(data => {
-            livresCache = data; // stocker la liste complète
-            afficherListe(livresCache);
+            sortiesCache = data; // stocker la liste complète
+            afficherListe(sortiesCache);
         });
 });
 
 
 searchInput.addEventListener("input", () => {
     const recherche = searchInput.value.toLowerCase();
-    const filtres = livresCache.filter(livre =>
-        (livre.titre && livre.titre.toLowerCase().includes(recherche)) ||
-        (livre.auteur && livre.auteur.toLowerCase().includes(recherche)) ||
-        (livre.categorie && livre.categorie.toLowerCase().includes(recherche))
+    const filtres = sortiesCache.filter(sortie =>
+        (sortie.titre && sortie.titre.toLowerCase().includes(recherche)) ||
+        (sortie.categorie && sortie.categorie.toLowerCase().includes(recherche)) ||
+        (sortie.budget && sortie.budget.toLowerCase().includes(recherche)) ||
+        (sortie.description && sortie.description.toLowerCase().includes(recherche)) ||
+        (sortie.note && sortie.note.toLowerCase().includes(recherche))
     );
 
     afficherListe(filtres);
@@ -59,17 +61,17 @@ form.addEventListener("submit", (e) => {
 
     const formData = new FormData(form);
 
-    fetch("http://localhost:5000/api/books", {
+    fetch("http://localhost:5000/api/sorties", {
         method: "POST",
         body: formData
     })
         .then(response => {
             if (response.ok) {
-                alert("Livre ajouté !");
+                alert("Sortie ajoutée !");
                 form.reset();
                 boutonActualiser.click(); // Recharge la liste
             } else {
-                console.error("Erreur lors de l'ajout du livre.");
+                console.error("Erreur lors de l'ajout de la sortie.");
             }
         })
         .catch(error => {

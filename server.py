@@ -22,33 +22,35 @@ sorties = [
 
 # GET api/books recupère les données de la liste de livre et le return sous forme de json pour garder le même format
 
-@app.route("/api/books", methods=["GET"])
-def get_books():
-    return jsonify(livres)
+@app.route("/api/sorties", methods=["GET"])
+def get_sorties():
+    return jsonify(sorties)
 
-@app.route("/api/books", methods=["POST"])
-def add_books():
+@app.route("/api/sorties", methods=["POST"])
+def add_sorties():
     titre = request.form.get("titre")
-    auteur = request.form.get("auteur")
     categorie = request.form.get("categorie")
-    if titre and auteur and categorie:
-        new_id = max([livre.get("id", 0) for livre in livres], default=0) + 1 
-        livres.append({"id" : new_id, "titre" : titre, "auteur" : auteur, "categorie": categorie})
+    budget = request.form.get("budget")
+    description = request.form.get("description")
+    note = request.form.get("note")
+    if titre and categorie and budget and description and note:
+        new_id = max([sortie.get("id", 0) for sortie in sorties], default=0) + 1 
+        sorties.append({"id" : new_id, "titre" : titre, "categorie": categorie, "budget": budget, "description": description, "note": note})
         return "Good"
-    return "Erreur : titre, auteur ou categorie manquant", 400
+    return "Erreur : titre, categorie, budget, description ou note manquant", 400
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/api/books/<int:id>", methods=["DELETE"])
+@app.route("/api/sorties/<int:id>", methods=["DELETE"])
 def delete_book(id): 
-    global livres # globale pour pouvoir modifier la liste
-    if not any(livre.get("id") == id for livre in livres): # any pour vérifier si le livre existe
-        return jsonify({"erreur": "Livre non trouvé"}), 404
+    global sorties # globale pour pouvoir modifier la liste
+    if not any(sortie.get("id") == id for sortie in sorties): # any pour vérifier si le livre existe
+        return jsonify({"erreur": "Sortie non trouvée"}), 404
 
-    livres = [livre for livre in livres if livre.get("id") != id]
-    return jsonify({"message" : "Livre supprimé"})
+    sorties = [sortie for sortie in sorties if sortie.get("id") != id]
+    return jsonify({"message" : "Sortie supprimée"})
 
 if __name__ == "__main__":
     app.run(debug=True)
