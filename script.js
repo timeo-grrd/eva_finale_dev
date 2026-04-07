@@ -91,7 +91,7 @@ function applyFilters() {
 
         return true;
     });
-
+// filtre par ordre croissant
     filtres.sort((a, b) => {
         const budgetA = parseFloat(a.budget) || 0;
         const budgetB = parseFloat(b.budget) || 0;
